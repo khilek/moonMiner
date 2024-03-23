@@ -47,21 +47,22 @@
     </section>
 
     <section class="container-fluid border-3">
-      <div class="row d-flex align-items-end">
-        <div class="col-4 ">
+      <div class="row ">
+        <div class="col-4 d-flex align-items-end">
           <h6>Click Upgrades</h6>
-          <button class="btn btn-primary" onclick="buyPickaxe('pickaxe')">Pickaxe 5</button>
-          <button class="btn btn-primary" onclick="buyPickaxe('drill')">Drill 5</button>
-          <button class="btn btn-primary" onclick="buyRover('rover')">Rover</button>
-          <button class="btn btn-primary">Test</button>
+          <button class="btn btn-primary" onclick="buyPickaxe('pickaxe')">Pickaxe $5</button>
+          <button class="btn btn-primary" onclick="buyDrill('drill')">Drill $10</button>
+          <button class="btn btn-primary" onclick="buyRover('rover')">Rover $20</button>
+          <button class="btn btn-primary" onclick="buyMiner('miner')">Miner $30</button>
         </div>
-        <div class="col-8">
+
+        <div class="col-8 d-flex justify-content-around">
           Stats
           <div id="pickaxe">Pickaxe</div>
           <div id="drill">Drill</div>
           <div id="rover">Rover</div>
+          <div id="miner">Miner</div>
         </div>
-
       </div>
 
     </section>

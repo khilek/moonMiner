@@ -20,6 +20,12 @@ let automaticUpgrades = [
     price: 600,
     quantity: 0,
     multiplier: 20
+  },
+  {
+    name: 'miner',
+    price: 600,
+    quantity: 0,
+    multiplier: 30
   }
 ];
 
@@ -32,6 +38,7 @@ function moonMine() {
   cheese++
   updateCheeseElm()
   collectClickUpgrades()
+  collectAutoUpgrades()
 }
 
 function updateCheeseElm() {
@@ -61,6 +68,12 @@ function updateRoverElm() {
   roverElm.innerText = `${roverUpgrade.quantity}`
 }
 
+function updateMinerElm() {
+  const minerUpgrade = automaticUpgrades.find(miner => miner.name == 'miner')
+  console.log('miner', minerUpgrade)
+  let minerElm = document.getElementById('miner')
+  minerElm.innerText = `${minerUpgrade.quantity}`
+}
 
 
 
@@ -72,28 +85,56 @@ function buyPickaxe(pickaxeName) {
     cheese -= 5
     pickaxeUpgrade.quantity++
     updatePickaxeElm()
-    updateDrillElm()
+    // updateDrillElm()
     updateCheeseElm()
   }
   // console.log('buyPickaxe')
 }
 
+function buyDrill(drillName) {
+  // console.log('Buying ⛏️', pickaxeName)
+  const drillUpgrade = clickUpgrades.find(drill => drill.name == drillName)
+  // console.log('⛏️', pickaxeUpgrade)
+  if (cheese >= 10) {
+    cheese -= 10
+    drillUpgrade.quantity++
+    // updatePickaxeElm()
+    updateDrillElm()
+    updateCheeseElm()
+  }
+  // console.log('buyPickaxe')
+}
 
 function buyRover(roverName) {
   // console.log('Buying ⛏️', pickaxeName)
   const roverUpgrade = automaticUpgrades.find(rover => rover.name == roverName)
   // console.log('⛏️', pickaxeUpgrade)
-  if (cheese >= 10) {
-    cheese -= 10
+  if (cheese >= 20) {
+    cheese -= 20
     roverUpgrade.quantity++
     updateRoverElm()
-    updatePickaxeElm()
-    updateDrillElm()
+    // updatePickaxeElm()
+    // updateDrillElm()
     updateCheeseElm()
   }
   // console.log('buyPickaxe')
 }
 
+function buyMiner(minerName) {
+  // console.log('Buying ⛏️', pickaxeName)
+  const minerUpgrade = automaticUpgrades.find(miner => miner.name == minerName)
+  // console.log('⛏️', pickaxeUpgrade)
+  if (cheese >= 30) {
+    cheese -= 30
+    minerUpgrade.quantity++
+    updateRoverElm()
+    updateMinerElm()
+    // updatePickaxeElm()
+    // updateDrillElm()
+    updateCheeseElm()
+  }
+  // console.log('buyPickaxe')
+}
 
 
 
