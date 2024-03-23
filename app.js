@@ -48,6 +48,7 @@ function buyPickaxe(pickaxeName) {
     cheese -= 5
     pickaxeUpgrade.quantity++
     updatePickaxeElm()
+    updateDrillElm()
     updateCheeseElm()
   }
   // console.log('buyPickaxe')
@@ -59,6 +60,15 @@ function updatePickaxeElm() {
   let pickaxeElm = document.getElementById('pickaxe')
   pickaxeElm.innerText = `${pickaxeUpgrade.quantity}`
 }
+
+
+function updateDrillElm() {
+  const drillUpgrade = clickUpgrades.find(drill => drill.name == 'drill')
+  console.log('drill', drillUpgrade)
+  let pickaxeElm = document.getElementById('drill')
+  pickaxeElm.innerText = `${drillUpgrade.quantity}`
+}
+
 
 function collectClickUpgrades() {
   clickUpgrades.forEach(clickUpgrade => {
