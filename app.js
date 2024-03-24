@@ -23,7 +23,7 @@ let automaticUpgrades = [
   },
   {
     name: 'miner',
-    price: 600,
+    price: 800,
     quantity: 0,
     multiplier: 30
   }
@@ -81,8 +81,8 @@ function buyPickaxe(pickaxeName) {
   // console.log('Buying ⛏️', pickaxeName)
   const pickaxeUpgrade = clickUpgrades.find(pickaxe => pickaxe.name == pickaxeName)
   // console.log('⛏️', pickaxeUpgrade)
-  if (cheese >= 5) {
-    cheese -= 5
+  if (cheese >= 100) {
+    cheese -= 100
     pickaxeUpgrade.quantity++
     updatePickaxeElm()
     // updateDrillElm()
@@ -95,8 +95,8 @@ function buyDrill(drillName) {
   // console.log('Buying ⛏️', pickaxeName)
   const drillUpgrade = clickUpgrades.find(drill => drill.name == drillName)
   // console.log('⛏️', pickaxeUpgrade)
-  if (cheese >= 10) {
-    cheese -= 10
+  if (cheese >= 200) {
+    cheese -= 200
     drillUpgrade.quantity++
     // updatePickaxeElm()
     updateDrillElm()
@@ -108,8 +108,8 @@ function buyRover(roverName) {
   // console.log('Buying ⛏️', pickaxeName)
   const roverUpgrade = automaticUpgrades.find(rover => rover.name == roverName)
   // console.log('⛏️', pickaxeUpgrade)
-  if (cheese >= 20) {
-    cheese -= 20
+  if (cheese >= 600) {
+    cheese -= 600
     roverUpgrade.quantity++
     updateRoverElm()
     // updatePickaxeElm()
@@ -122,8 +122,8 @@ function buyMiner(minerName) {
   // console.log('Buying ⛏️', pickaxeName)
   const minerUpgrade = automaticUpgrades.find(miner => miner.name == minerName)
   // console.log('⛏️', pickaxeUpgrade)
-  if (cheese >= 30) {
-    cheese -= 30
+  if (cheese >= 800) {
+    cheese -= 800
     minerUpgrade.quantity++
     // updateRoverElm()
     updateMinerElm()
