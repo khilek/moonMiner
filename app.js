@@ -152,11 +152,12 @@ function collectAutoUpgrades() {
     // console.log(autoUpgrade.multiplier)
     cheese += autoUpgrade.multiplier * autoUpgrade.quantity
     // console.log(cheese)
-    setInterval(collectAutoUpgrades, 3000);
+
     updateCheeseElm()
+
   })
 
 }
-
+setInterval(collectAutoUpgrades, 3000);
 
 
