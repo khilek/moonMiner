@@ -102,7 +102,6 @@ function buyDrill(drillName) {
     updateDrillElm()
     updateCheeseElm()
   }
-  // console.log('buyPickaxe')
 }
 
 function buyRover(roverName) {
@@ -117,7 +116,6 @@ function buyRover(roverName) {
     // updateDrillElm()
     updateCheeseElm()
   }
-  // console.log('buyPickaxe')
 }
 
 function buyMiner(minerName) {
@@ -127,13 +125,12 @@ function buyMiner(minerName) {
   if (cheese >= 30) {
     cheese -= 30
     minerUpgrade.quantity++
-    updateRoverElm()
+    // updateRoverElm()
     updateMinerElm()
     // updatePickaxeElm()
     // updateDrillElm()
     updateCheeseElm()
   }
-  // console.log('buyPickaxe')
 }
 
 
@@ -141,9 +138,9 @@ function buyMiner(minerName) {
 
 function collectClickUpgrades() {
   clickUpgrades.forEach(clickUpgrade => {
-    console.log(clickUpgrade.multiplier)
+    // console.log(clickUpgrade.multiplier)
     cheese += clickUpgrade.multiplier * clickUpgrade.quantity
-    console.log(cheese)
+    // console.log(cheese)
     updateCheeseElm()
   })
 
@@ -152,10 +149,14 @@ function collectClickUpgrades() {
 
 function collectAutoUpgrades() {
   automaticUpgrades.forEach(autoUpgrade => {
-    console.log(autoUpgrade.multiplier)
+    // console.log(autoUpgrade.multiplier)
     cheese += autoUpgrade.multiplier * autoUpgrade.quantity
-    console.log(cheese)
+    // console.log(cheese)
+    setInterval(collectAutoUpgrades, 3000);
     updateCheeseElm()
   })
 
 }
+
+
+
