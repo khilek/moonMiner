@@ -32,13 +32,14 @@ let automaticUpgrades = [
 
 
 let cheese = 0
-
+let multiplier = 0
 
 function moonMine() {
   cheese++
   updateCheeseElm()
   collectClickUpgrades()
   collectAutoUpgrades()
+  drawMultiplier()
 }
 
 function updateCheeseElm() {
@@ -75,6 +76,10 @@ function updateMinerElm() {
   minerElm.innerText = `${minerUpgrade.quantity}`
 }
 
+function updateMultiplierElm() {
+  let multiplierElm = document.getElementById('multiplier')
+  multiplierElm.innerHTML = multiplier.toString()
+}
 
 
 function buyPickaxe(pickaxeName) {
@@ -87,6 +92,8 @@ function buyPickaxe(pickaxeName) {
     updatePickaxeElm()
     // updateDrillElm()
     updateCheeseElm()
+    updateMultiplierElm
+    drawMultiplier()
   }
   // console.log('buyPickaxe')
 }
@@ -134,7 +141,10 @@ function buyMiner(minerName) {
 }
 
 
-
+function drawMultiplier() {
+  clickUpgrades.forEach(multiplier => { multiplier += multiplier.quantity * multiplier.multiplier })
+  console.log(multiplier)
+}
 
 function collectClickUpgrades() {
   clickUpgrades.forEach(clickUpgrade => {

@@ -14,7 +14,7 @@
   <script src="app.js" defer></script>
 </head>
 
-<body class="debug">
+<body class="debug ">
 
 
   <main class="container">
@@ -24,7 +24,7 @@
       </h1>
     </nav>
 
-    <section class="container">
+    <section class="container-fluid">
       <div class="row d-flex justify-content-center">
         <div class="col-4">
           <img class="img-fluid" onclick="moonMine()" src="moon.png.png" alt="moon">
@@ -35,11 +35,13 @@
   </main>
 
 
-  <footer class="container">
-    <div class="row ">
-      <div class="col-4 border border-danger">Multiplier</div>
-      <div class="col-4 border border-danger" id="cheese">Cheese</div>
-      <div class="col-4 border border-danger">Timer</div>
+  <footer class="container ">
+    <div class="row d-flex justify-content-center ">
+      <div class="col-4 border border-danger  card bg-warning" id="multiplier">Multiplier</div>
+      <div class="col-4 border border-danger rounded-top bg-warning " id="cheese"><span
+          class="mdi mdi-cheese">Cheese</span>
+      </div>
+      <div class="col-4 border border-danger card bg-warning">Timer</div>
     </div>
 
 
@@ -57,10 +59,10 @@
 
         <div class="col-6 d-flex justify-content-evenly flex-column">
           <h6 class="text-center">Stats</h6>
-          <div id="pickaxe" class="border border-success">Pickaxe</div>
-          <div id="drill" class="border border-success">Drill</div>
-          <div id="rover" class="border border-success">Rover</div>
-          <div id="miner" class="border border-success">Miner</div>
+          <div id="pickaxe" class="border border-3 border-success">Pickaxe</div>
+          <div id="drill" class="border border-3 border-success">Drill</div>
+          <div id="rover" class="border border-3 border-success">Rover</div>
+          <div id="miner" class="border border-3 border-success">Miner</div>
         </div>
       </div>
 
